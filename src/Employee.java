@@ -1,6 +1,7 @@
 public class Employee {
     static int wage_per_hour = 20;
     static int full_time_hours = 8;
+    static int part_time_hours = 4;
     String type; // FULL for full time employee and PART for part time employee
 
     public Employee(String type) {
@@ -22,6 +23,16 @@ public class Employee {
         } else {
             int dailywage = full_time_hours * wage_per_hour;
             System.out.println("Daily wage for this full time employee is: " + dailywage);
+        }
+    }
+
+    // UC3: function to get part time employee wage
+    public void getPartTimeWage() {
+        if (!this.type.equals("PART")) {
+            System.out.println("The employee is not part time employee.");
+        } else {
+            int dailywage = part_time_hours * wage_per_hour;
+            System.out.println("Daily wage for this part time employee is: " + dailywage);
         }
     }
 }

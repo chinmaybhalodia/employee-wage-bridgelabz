@@ -10,5 +10,11 @@ public class App {
 
         // getting daily full time wage
         e1.getFullTimeWage();
+
+        // employee e2
+        Employee e2 = new Employee("PART");
+
+        // getting daily part time wage
+        e2.getPartTimeWage();
     }
 }
