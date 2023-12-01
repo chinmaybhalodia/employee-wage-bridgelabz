@@ -2,6 +2,7 @@ public class Employee {
     static int wage_per_hour = 20;
     static int full_time_hours = 8;
     static int part_time_hours = 4;
+    static int working_days = 20;
     String type; // FULL for full time employee and PART for part time employee
 
     public Employee(String type) {
@@ -47,5 +48,17 @@ public class Employee {
                 System.out.println("Daily wage for this part time employee is: " + part_time_hours * wage_per_hour);
                 break;
         }
+    }
+
+    // UC5: calculate monthly wages
+    public void getMonthlyWage() {
+        int work_hours;
+        if (this.type.equals("FULL"))
+            work_hours = working_days * full_time_hours;
+        else
+            work_hours = working_days * part_time_hours;
+
+        int monthlyWage = work_hours * wage_per_hour;
+        System.out.println("Monthly wage for this employee is: " + monthlyWage);
     }
 }

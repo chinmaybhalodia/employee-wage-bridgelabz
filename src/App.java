@@ -20,5 +20,9 @@ public class App {
         // getting daily wage by switch statement
         e1.getDailyWage();
         e2.getDailyWage();
+
+        // getting monthly wages for employees
+        e1.getMonthlyWage();
+        e2.getMonthlyWage();
     }
 }
