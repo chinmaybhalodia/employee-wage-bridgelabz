@@ -35,4 +35,17 @@ public class Employee {
             System.out.println("Daily wage for this part time employee is: " + dailywage);
         }
     }
+
+    // UC4: function to get employee wage by switch statement
+    public void getDailyWage() {
+        switch (type) {
+            case "FULL":
+                System.out.println("Daily wage for this full time employee is: " + full_time_hours * wage_per_hour);
+                break;
+
+            case "PART":
+                System.out.println("Daily wage for this part time employee is: " + part_time_hours * wage_per_hour);
+                break;
+        }
+    }
 }

@@ -16,5 +16,9 @@ public class App {
 
         // getting daily part time wage
         e2.getPartTimeWage();
+
+        // getting daily wage by switch statement
+        e1.getDailyWage();
+        e2.getDailyWage();
     }
 }
