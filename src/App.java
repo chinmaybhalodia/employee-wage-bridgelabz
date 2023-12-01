@@ -2,31 +2,29 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome to Employee Wage Computation Program");
 
-        // employee e1
-        Employee e1 = new Employee("FULL");
+        // UC8: creating two different companies
+        Company c1 = new Company(20, 8, 4, 20, 100);
+        Company c2 = new Company(30, 8, 4, 25, 120);
 
-        // checking attendance of employee e1
-        System.out.println(e1.checkAttendance());
-
-        // getting daily full time wage
-        e1.getFullTimeWage();
-
-        // employee e2
-        Employee e2 = new Employee("PART");
-
-        // getting daily part time wage
-        e2.getPartTimeWage();
-
-        // getting daily wage by switch statement
+        // UC8: creating employees of these companies
+        Employee e1 = new Employee("FULL", c1);
         e1.getDailyWage();
-        e2.getDailyWage();
-
-        // getting monthly wages for employees
         e1.getMonthlyWage();
-        e2.getMonthlyWage();
-
-        // cheking total wage for both employees
         e1.calculateTotalWage();
+
+        Employee e2 = new Employee("FULL", c2);
+        e2.getDailyWage();
+        e2.getMonthlyWage();
         e2.calculateTotalWage();
+
+        Employee e3 = new Employee("PART", c1);
+        e3.getDailyWage();
+        e3.getMonthlyWage();
+        e3.calculateTotalWage();
+
+        Employee e4 = new Employee("PART", c2);
+        e4.getDailyWage();
+        e4.getMonthlyWage();
+        e4.calculateTotalWage();
     }
 }
