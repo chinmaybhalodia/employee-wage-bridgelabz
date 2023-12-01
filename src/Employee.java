@@ -61,4 +61,27 @@ public class Employee {
         int monthlyWage = work_hours * wage_per_hour;
         System.out.println("Monthly wage for this employee is: " + monthlyWage);
     }
+
+    // UC6: get total wage as per condition
+    public void calculateTotalWage() {
+        int work_hours = 0;
+        int days = 0;
+
+        for (int i = 0; i < 30; i++) {
+            if (this.checkAttendance()) {
+                if (this.type.equals("FULL"))
+                    work_hours += full_time_hours;
+                else
+                    work_hours += part_time_hours;
+
+                days++;
+            }
+
+            if (work_hours >= 100 || days == 20)
+                break;
+        }
+
+        int total_wage = work_hours * wage_per_hour;
+        System.out.println("Total wage for this employee is: " + total_wage);
+    }
 }

@@ -24,5 +24,9 @@ public class App {
         // getting monthly wages for employees
         e1.getMonthlyWage();
         e2.getMonthlyWage();
+
+        // cheking total wage for both employees
+        e1.calculateTotalWage();
+        e2.calculateTotalWage();
     }
 }
