@@ -10,7 +10,7 @@ public class Employee {
         this.name = name;
         this.type = type;
         this.company = company;
-        company.updateTotalWage(this.getMonthlyWage());
+        company.employees.add(this);
     }
 
     // UC1 : function to check employee attendance
