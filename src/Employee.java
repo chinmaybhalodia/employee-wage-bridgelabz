@@ -1,13 +1,16 @@
 public class Employee {
+    String name;
     String type; // FULL for full time employee and PART for part time employee
 
     // UC8: added specific company for every employee.
     // work params differ based on company.
     Company company;
 
-    public Employee(String type, Company company) {
+    public Employee(String name, String type, Company company) {
+        this.name = name;
         this.type = type;
         this.company = company;
+        company.updateTotalWage(this.getMonthlyWage());
     }
 
     // UC1 : function to check employee attendance
@@ -19,23 +22,21 @@ public class Employee {
     }
 
     // UC4: function to get employee wage by switch statement
-    public void getDailyWage() {
+    public int getDailyWage() {
         switch (type) {
             case "FULL":
-                System.out.println("Daily wage for this full time employee is: "
-                        + company.full_time_hours * company.wage_per_hour);
-                break;
+                int daily_full_wage = company.full_time_hours * company.wage_per_hour;
+                return daily_full_wage;
 
             case "PART":
-                System.out.println(
-                        "Daily wage for this part time employee is: "
-                                + company.part_time_hours * company.wage_per_hour);
-                break;
+                int daily_part_wage = company.part_time_hours * company.wage_per_hour;
+                return daily_part_wage;
         }
+        return -1;
     }
 
     // UC5: calculate monthly wages
-    public void getMonthlyWage() {
+    public int getMonthlyWage() {
         int work_hours;
         if (this.type.equals("FULL"))
             work_hours = company.working_days * company.full_time_hours;
@@ -43,11 +44,11 @@ public class Employee {
             work_hours = company.working_days * company.part_time_hours;
 
         int monthlyWage = work_hours * company.wage_per_hour;
-        System.out.println("Monthly wage for this employee is: " + monthlyWage);
+        return monthlyWage;
     }
 
     // UC6: get total wage as per condition
-    public void calculateTotalWage() {
+    public int calculateTotalWage() {
         int work_hours = 0;
         int days = 0;
 
@@ -66,6 +67,6 @@ public class Employee {
         }
 
         int total_wage = work_hours * company.wage_per_hour;
-        System.out.println("Total wage for this employee is: " + total_wage);
+        return total_wage;
     }
 }
