@@ -33,5 +33,9 @@ public class App {
         // UC9: Getting total wage for both companies
         System.out.println("\nTotal wage for Company1 is: " + empWageBuilder.getTotalCompanyWage("Company1"));
         System.out.println("Total wage for Company2 is: " + empWageBuilder.getTotalCompanyWage("Company2"));
+
+        // UC13: Getting daily total wage for both companies
+        System.out.println("\nDaily total wage for Company1 is: " + empWageBuilder.getDailyCompanyWage("Company1"));
+        System.out.println("Daily total wage for Company2 is: " + empWageBuilder.getDailyCompanyWage("Company2"));
     }
 }

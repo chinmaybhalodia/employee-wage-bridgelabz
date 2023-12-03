@@ -5,4 +5,7 @@ public interface BuilderInterface {
             int max_working_hours);
 
     public int getTotalCompanyWage(String company_name);
+
+    // UC13: adding daily wage for companies
+    public int getDailyCompanyWage(String company_name);
 }

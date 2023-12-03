@@ -30,6 +30,21 @@ public class EmpWageBuilder implements BuilderInterface {
         return -1;
     }
 
+    // UC13: adding total daily wage for companies
+    public int getDailyCompanyWage(String name) {
+        if (this.companies.containsKey(name)) {
+            Company company = this.companies.get(name);
+            int total_wage = 0;
+            for (Employee employee : company.employees) {
+                total_wage += employee.getDailyWage();
+            }
+            return total_wage;
+        } else {
+            System.out.println("No such company found.\n");
+        }
+        return -1;
+    }
+
     public Company getCompanybyName(String name) {
         return this.companies.containsKey(name) ? this.companies.get(name) : null;
     }
