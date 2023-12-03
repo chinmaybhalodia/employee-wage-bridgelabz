@@ -10,30 +10,28 @@ public class App {
         empWageBuilder.addCompany("Company2", 30, 8, 4, 25, 120);
 
         // UC8: creating employees of these companies
-        Employee e1 = new Employee("Emp1", "FULL", empWageBuilder.companies[0]);
-        System.out.println("Daily wage for " + e1.name + " : " + e1.getDailyWage());
+        Employee e1 = new Employee("Emp1", "FULL", empWageBuilder.getCompanybyName("Company1"));
+        System.out.println("\nDaily wage for " + e1.name + " : " + e1.getDailyWage());
         System.out.println("Monthly wage for " + e1.name + " : " + e1.getMonthlyWage());
         System.out.println("Total wage for " + e1.name + " : " + e1.calculateTotalWage());
 
-        Employee e2 = new Employee("Emp2", "FULL", empWageBuilder.companies[1]);
-        System.out.println("Daily wage for " + e2.name + " : " + e2.getDailyWage());
+        Employee e2 = new Employee("Emp2", "FULL", empWageBuilder.getCompanybyName("Company2"));
+        System.out.println("\nDaily wage for " + e2.name + " : " + e2.getDailyWage());
         System.out.println("Monthly wage for " + e2.name + " : " + e2.getMonthlyWage());
         System.out.println("Total wage for " + e2.name + " : " + e2.calculateTotalWage());
 
-        Employee e3 = new Employee("Emp3", "PART", empWageBuilder.companies[0]);
-        System.out.println("Daily wage for " + e3.name + " : " + e3.getDailyWage());
+        Employee e3 = new Employee("Emp3", "PART", empWageBuilder.getCompanybyName("Company1"));
+        System.out.println("\nDaily wage for " + e3.name + " : " + e3.getDailyWage());
         System.out.println("Monthly wage for " + e3.name + " : " + e3.getMonthlyWage());
         System.out.println("Total wage for " + e3.name + " : " + e3.calculateTotalWage());
 
-        Employee e4 = new Employee("Emp4", "PART", empWageBuilder.companies[1]);
-        System.out.println("Daily wage for " + e4.name + " : " + e4.getDailyWage());
+        Employee e4 = new Employee("Emp4", "PART", empWageBuilder.getCompanybyName("Company2"));
+        System.out.println("\nDaily wage for " + e4.name + " : " + e4.getDailyWage());
         System.out.println("Monthly wage for " + e4.name + " : " + e4.getMonthlyWage());
         System.out.println("Total wage for " + e4.name + " : " + e4.calculateTotalWage());
 
         // UC9: Getting total wage for both companies
-        System.out.println("Total wage for this company c1 is: "
-                + empWageBuilder.getTotalCompanyWage(empWageBuilder.companies[0]));
-        System.out.println("Total wage for this company c1 is: "
-                + empWageBuilder.getTotalCompanyWage(empWageBuilder.companies[1]));
+        System.out.println("\nTotal wage for Company1 is: " + empWageBuilder.getTotalCompanyWage("Company1"));
+        System.out.println("Total wage for Company2 is: " + empWageBuilder.getTotalCompanyWage("Company2"));
     }
 }

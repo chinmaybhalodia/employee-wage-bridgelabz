@@ -9,8 +9,10 @@ public class Employee {
     public Employee(String name, String type, Company company) {
         this.name = name;
         this.type = type;
-        this.company = company;
-        company.employees.add(this);
+        if (company != null) {
+            this.company = company;
+            company.employees.add(this);
+        }
     }
 
     // UC1 : function to check employee attendance
